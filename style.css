@@ -1,0 +1,58 @@
+body {
+    background-color: #0d0d0d;
+}
+
+.four-year-container {
+    width: 60vw;
+    height: 50vh;
+    position: absolute;
+    top: 5vh;
+    left: 20vw;
+    display: flex;
+}
+
+.one-year-container {
+    width: 24%;
+    height: 100%;
+    position: relative;
+    margin-left: 1%;
+    display: flex;
+}
+
+.semester-container {
+    background-color: #d9d9d9;
+    width: 45%;
+    border: 0.25vw solid white;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    height: 100%;
+    position: relative;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.class-box {
+    width: 95%;
+    margin-left: 2.5%;
+    position: relative;
+    height: auto;
+    background-color: greenyellow;
+    color: black;
+    border: 1px solid black;
+    font-family: sans-serif;
+    text-align: center;
+    padding-top: 15%;
+    padding-bottom: 0vh;
+    line-height: 0.5vh;
+    margin-bottom: 1vh;
+    font-size: 0.75vw;
+}
+
+.control-panel {
+    width: 90vw;
+    height: 35vh;
+    position: absolute;
+    top: 60vh;
+    left: 5vw;
+    background-color: #d9d9d9;
+}
