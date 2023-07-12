@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>HTML 5 Boilerplate</title>
+    <title>Tabulate</title>
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
@@ -50,6 +50,11 @@
         </div>
     </div>
     <div class="control-panel">
+        <div class="degreeworks-filename" id="degreeworks-filename">No File Uploaded</div>
+        <label for="file-input" class="upload-button">Upload DegreeWorks Data (.html)</label>
+        <input type="file" style="visibility:hidden" class="upload-button" id="file-input">
+        </input>
+        <button class="send-file" onclick="sendFileData()">^</button>
     </div>
 
 	<script src="index.js"></script>
