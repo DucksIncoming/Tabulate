@@ -257,6 +257,9 @@ document.getElementById("new-class-add").addEventListener("click", e => {
     let in_corequisites = document.getElementById("new-class-corequisites").value;
     let in_category = document.getElementById("new-class-category").value;
 
+    in_prerequisites = in_prerequisites.replaceAll(", ", ",");
+    in_corequisites = in_corequisites.replaceAll(", ", ",");
+
     let prereqArray = in_prerequisites.split(",");
     let coreqArray = in_corequisites.split(",");
 
