@@ -8,44 +8,80 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
+    <input type="image" src="Icons/trash-icon.png" class="delete-all-button" id="delete-all-button"></input>
+    <input type="image" src="Icons/plus-icon.png" class="add-new-button" id="add-new-button"></input>
+
+    <dialog class="add-new-class-dialogue" id="add-new-class-dialogue">
+        <p class="new-class-title">Add New Class</p>
+
+        <label for="new-class-prefix" class="new-class-label">Course Type (Prefix)</label>
+        <input onchange="updateClassPreview()" type="text", class="new-class-input", id="new-class-prefix">
+        <label for="new-class-prefix" class="new-class-label">Course Number</label>
+        <input onchange="updateClassPreview()"  type="text", class="new-class-input", id="new-class-num">
+        <label for="new-class-name" class="new-class-label">Course Name/Description</label>
+        <input onchange="updateClassPreview()"  type="text", class="new-class-input", id="new-class-name">
+        <label for="new-class-prefix" class="new-class-label">Credit Hours</label>
+        <input onchange="updateClassPreview()"  type="text", class="new-class-input", id="new-class-hours">
+        <label for="new-class-prefix" class="new-class-label">Prerequisite Courses (Separated by comma)</label>
+        <textarea onchange="updateClassPreview()"  type="text", class="new-class-multi-input", id="new-class-prerequisites"></textarea>
+        <label for="new-class-prefix" class="new-class-label">Corequisite Courses (Separated by comma)</label>
+        <textarea onchange="updateClassPreview()"  type="text", class="new-class-multi-input", id="new-class-corequisites"></textarea>
+
+        <label for="new-class-category" class="new-class-label">Course Category</label>
+        <br>
+        <select onchange="updateClassPreview()" id="new-class-category" class="category-dropdown">
+            <option value="0">Mathematics</option>
+            <option value="1">Science</option>
+            <option value="2">History</option>
+            <option value="3">Foreign Language</option>
+            <option value="4">Elective</option>
+            <option value="5">General/University</option>
+            <option value="6">Honors/Specialty Course</option>
+            <option value="7">Major Specific</option>
+            <option value="8">Other (Custom Color)</option>
+        </select>
+
+        <div class="new-class-preview" id="new-class-preview" style="background-color: yellow;">
+            <input type="image" src="Icons/x-icon.png" class="class-box-delete"></input>
+            <b class="class-box-text" id="class-preview-prefix-num">[PREFIX] [NUM]</b>
+            <p class="class-box-text" id="class-preview-classname">[CLASSNAME]</p>
+            <p class="class-box-text" id="class-preview-hours">[HOURS] hrs.</p>
+        </div>
+
+        <input type="image" src="icons/x-icon.png" class="new-class-cancel" id="new-class-cancel">
+        <input type="image" src="Icons/plus-icon.png" class="new-class-add" id="new-class-add"></input>
+    </dialog>
+
+    <dialog class="delete-all-dialogue" id="delete-all-dialogue">
+        <p class="delete-all-dialogue-warning">⚠</p>
+        <p>Are you sure you want to <b>delete all schedule data?</b> (This cannot be undone).</p>
+        <button class="delete-all-dialogue-button" id="delete-all-confirm">Delete</button>
+        <button class="delete-all-dialogue-button" id="delete-all-cancel">Cancel</button>
+    </dialog>
+
     <div class="four-year-container">
         <div class="one-year-container">
-            <div class="semester-container">
-                <div class="class-box">
-                    <b>HONR 200</b>
-                    <p>Rhetoric</p>
-                    <p>3 hrs.</p>
-                </div>
-                <div class="class-box">
-                    <b>HONR 200</b>
-                    <p>Rhetoric</p>
-                    <p>3 hrs.</p>
-                </div>
-                <div class="class-box">
-                    <b>HONR 200</b>
-                    <p>Rhetoric</p>
-                    <p>3 hrs.</p>
-                </div>
+            <div class="semester-container" id="freshman-fall">
             </div>
-            <div class="semester-container">
+            <div class="semester-container" id="freshman-spring">
             </div>
         </div>
         <div class="one-year-container">
-            <div class="semester-container">
+            <div class="semester-container" id="sophomore-fall">
             </div>
-            <div class="semester-container">
-            </div>
-        </div>
-        <div class="one-year-container">
-            <div class="semester-container">
-            </div>
-            <div class="semester-container">
+            <div class="semester-container" id="sophomore-spring">
             </div>
         </div>
         <div class="one-year-container">
-            <div class="semester-container">
+            <div class="semester-container" id="junior-fall">
             </div>
-            <div class="semester-container">
+            <div class="semester-container" id="junior-spring">
+            </div>
+        </div>
+        <div class="one-year-container">
+            <div class="semester-container" id="senior-fall">
+            </div>
+            <div class="semester-container" id="senior-spring">
             </div>
         </div>
     </div>
@@ -57,6 +93,6 @@
         <button class="send-file" onclick="sendFileData()">^</button>
     </div>
 
-	<script src="index.js"></script>
+	<script src="index.js" defer></script>
   </body>
 </html>
