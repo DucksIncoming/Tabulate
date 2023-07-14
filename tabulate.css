@@ -22,11 +22,12 @@ body {
 .semester-container {
     background-color: #d9d9d9;
     width: 45%;
-    padding-top: 4vh;
+    padding-top: 7vh;
+    font-size: 2ch;
     border: 0.25vw solid white;
     margin-left: 2.5%;
     margin-right: 2.5%;
-    height: calc(100% - 4vh);
+    height: calc(100% - 7vh);
     position: relative;
     overflow-y: auto;
     overflow-x: hidden;
@@ -162,15 +163,15 @@ body {
 
 .semester-title {
     position: fixed;
-    top: 2vh;
+    top: 4vh;
     width: 9.25%;
-    padding-top: 2.5vh;
+    padding-top: 2vh;
     padding-bottom: 2vh;
     color: black;
+    background-color: #a5a5a5;
     font-family: sans-serif;
     text-align: center;
-    opacity: 0.9;
-    z-index: 320;
+    z-index: 420;
 }
 
 .delete-all-button {
