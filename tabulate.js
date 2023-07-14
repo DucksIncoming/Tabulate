@@ -209,7 +209,7 @@ function buildSchedule() {
         let semesterHours = 0;
 
         for (let cl = 0; cl < courseData[sem].length; cl++){
-            let classBoxHtml = '<div class="class-box" draggable="true" style="background-color: [COLOR]; border: [BORDER]; z-index: [INDEX]"><input type="image" src="Icons/x-icon.png" class="class-box-delete" title="Delete This Course"></input><input type="image" src="Icons/edit-icon.png" title="Edit This Course" class="class-box-edit"></input><b class="class-box-text">[PREFIX] [NUM]</b><p class="class-box-text">[CLASSNAME]</p><p class="class-box-text">[HOURS] hrs.</p></div>'
+            let classBoxHtml = '<div class="class-box" draggable="true" style="background-color: [COLOR]; border: [BORDER]; z-index: [INDEX]"><input type="image" src="Tabulate-Icons/x-icon.png" class="class-box-delete" title="Delete This Course"></input><input type="image" src="Tabulate-Icons/edit-icon.png" title="Edit This Course" class="class-box-edit"></input><b class="class-box-text">[PREFIX] [NUM]</b><p class="class-box-text">[CLASSNAME]</p><p class="class-box-text">[HOURS] hrs.</p></div>'
             let standardBorder = "0.15vw solid black";
             let errorBorder = "0.15vw solid red";
             let activeClass = courseData[sem][cl];
@@ -348,6 +348,14 @@ async function animateCheckmark() {
     saveConfirmation.classList.remove("checkanim");
 }
 
+window.addEventListener("beforeunload", function (e) {
+    var confirmationMessage = 'It looks like you have been editing something. '
+                            + 'If you leave before saving, your changes will be lost.';
+
+    (e || window.event).returnValue = confirmationMessage; //Gecko + IE
+    return confirmationMessage; //Gecko + Webkit, Safari, Chrome etc.
+});
+
 document.getElementById("new-class-add").addEventListener("click", e => {
     let in_prefix = document.getElementById("new-class-prefix").value;
     let in_num = document.getElementById("new-class-num").value;
@@ -392,7 +400,7 @@ document.getElementById("add-new-button").addEventListener("click", e => {
     document.getElementById("new-class-prerequisites").value = "";
     document.getElementById("new-class-corequisites").value = "";
 
-    let previewHtml = '<div class="new-class-preview" id="new-class-preview" style="background-color: yellow;"><input type="image" src="Icons/x-icon.png" class="class-box-delete"></input><b class="class-box-text" id="class-preview-prefix-num"></b><p class="class-box-text" id="class-preview-classname"></p><p class="class-box-text" id="class-preview-hours">hrs.</p></div>'
+    let previewHtml = '<div class="new-class-preview" id="new-class-preview" style="background-color: yellow;"><input type="image" src="Tabulate-Icons/x-icon.png" class="class-box-delete"></input><b class="class-box-text" id="class-preview-prefix-num"></b><p class="class-box-text" id="class-preview-classname"></p><p class="class-box-text" id="class-preview-hours">hrs.</p></div>'
     document.getElementById("new-class-preview").remove();
 
     var newClassPreview = document.createElement("div");
@@ -410,7 +418,7 @@ function updateClassPreview(){
     let in_category = document.getElementById("new-class-category");
 
     document.getElementById("new-class-preview").remove();
-    let previewHtml = '<div class="new-class-preview" id="new-class-preview" style="background-color: [COLOR];"><input type="image" src="Icons/x-icon.png" class="class-box-delete"></input><b class="class-box-text" id="class-preview-prefix-num">[PREFIX] [NUM]</b><p class="class-box-text" id="class-preview-classname">[CLASSNAME]</p><p class="class-box-text" id="class-preview-hours">[HOURS] hrs.</p></div>'
+    let previewHtml = '<div class="new-class-preview" id="new-class-preview" style="background-color: [COLOR];"><input type="image" src="Tabulate-Icons/x-icon.png" class="class-box-delete"></input><b class="class-box-text" id="class-preview-prefix-num">[PREFIX] [NUM]</b><p class="class-box-text" id="class-preview-classname">[CLASSNAME]</p><p class="class-box-text" id="class-preview-hours">[HOURS] hrs.</p></div>'
     previewHtml = previewHtml.replace("[PREFIX]", in_prefix.value.toUpperCase());
     previewHtml = previewHtml.replace("[NUM]", in_num.value);
     previewHtml = previewHtml.replace("[CLASSNAME]", in_name.value);

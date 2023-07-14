@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Tabulate</title>
-    <link rel="icon" type="image/x-icon" href="/Icons/favicon.png">
-    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="/Tabulate-Icons/favicon.png">
+    <link rel="stylesheet" href="tabulate.css">
   </head>
   <body>
-    <input type="image" title="Delete All Course Data" src="Icons/trash-icon.png" class="delete-all-button" id="delete-all-button"></input>
-    <input type="image" title="Add A New Course" src="Icons/plus-icon.png" class="add-new-button" id="add-new-button"></input>
-    <input type="image" title="Save Data to Local Storage" src="Icons/save-icon.png" class="save-data-button" id="save-data-button"></input>
-    <img src="Icons/check-icon.png" class="save-confirmation-image" id="save-confirmation-image">
+    <input type="image" title="Delete All Course Data" src="Tabulate-Icons/trash-icon.png" class="delete-all-button" id="delete-all-button"></input>
+    <input type="image" title="Add A New Course" src="Tabulate-Icons/plus-icon.png" class="add-new-button" id="add-new-button"></input>
+    <input type="image" title="Save Data to Local Storage" src="Tabulate-Icons/save-icon.png" class="save-data-button" id="save-data-button"></input>
+    <img src="Tabulate-Icons/check-icon.png" class="save-confirmation-image" id="save-confirmation-image">
 
     <dialog class="add-new-class-dialogue" id="add-new-class-dialogue">
         <p class="new-class-title">Add New Courses</p>
@@ -45,14 +45,14 @@
         </select>
 
         <div class="new-class-preview" id="new-class-preview" style="background-color: yellow;">
-            <input type="image" src="Icons/x-icon.png" class="class-box-delete"></input>
+            <input type="image" src="Tabulate-Icons/x-icon.png" class="class-box-delete"></input>
             <b class="class-box-text" id="class-preview-prefix-num">[PREFIX] [NUM]</b>
             <p class="class-box-text" id="class-preview-classname">[CLASSNAME]</p>
             <p class="class-box-text" id="class-preview-hours">[HOURS] hrs.</p>
         </div>
 
-        <input type="image" src="icons/x-icon.png" class="new-class-cancel" id="new-class-cancel">
-        <input type="image" src="Icons/plus-icon.png" class="new-class-add" id="new-class-add"></input>
+        <input type="image" src="Tabulate-Icons/x-icon.png" class="new-class-cancel" id="new-class-cancel">
+        <input type="image" src="Tabulate-Icons/plus-icon.png" class="new-class-add" id="new-class-add"></input>
     </dialog>
 
     <dialog class="delete-all-dialogue" id="delete-all-dialogue">
@@ -92,8 +92,8 @@
             <option value="8">Other (Custom Color)</option>
         </select>
 
-        <input type="image" src="icons/x-icon.png" class="edit-class-cancel" id="edit-class-cancel">
-        <input type="image" src="Icons/plus-icon.png" class="edit-class-confirm" id="edit-class-confirm"></input>
+        <input type="image" src="Tabulate-Icons/x-icon.png" class="edit-class-cancel" id="edit-class-cancel">
+        <input type="image" src="Tabulate-Icons/plus-icon.png" class="edit-class-confirm" id="edit-class-confirm"></input>
     </dialog>
 
     <div class="four-year-container">
@@ -125,6 +125,6 @@
     <div class="external-credit-container" id="external-credit-container">
     </div>
 
-	<script src="index.js" defer></script>
+	<script src="tabulate.js" defer></script>
   </body>
 </html>
