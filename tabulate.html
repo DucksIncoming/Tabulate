@@ -31,21 +31,39 @@
         <textarea onchange="updateClassPreview()"  type="text", class="new-class-multi-input", id="new-class-corequisites"></textarea>
 
         <label for="new-class-category" class="new-class-label">Course Category</label>
-        <br>
-        <select onchange="updateClassPreview()" id="new-class-category" class="category-dropdown">
-            <option value="0">Mathematics</option>
-            <option value="1">Science</option>
-            <option value="2">History</option>
-            <option value="3">Foreign Language</option>
-            <option value="4">Elective</option>
-            <option value="5">General/University</option>
-            <option value="6">Honors/Specialty Course</option>
-            <option value="7">Major Specific</option>
-            <option value="8">Other (Custom Color)</option>
-        </select>
+        <label for="new-class-semester" class="new-class-label semester-label">Course Semester</label>
+        <div class="new-class-horizontal-box">  
+            <br>
+            <select onchange="updateClassPreview()" id="new-class-category" class="category-dropdown">
+                <option value="0">Mathematics</option>
+                <option value="1">Science</option>
+                <option value="2">History</option>
+                <option value="3">Foreign Language</option>
+                <option value="4">Elective</option>
+                <option value="5">General/University</option>
+                <option value="6">Honors/Specialty Course</option>
+                <option value="7">Major Specific</option>
+                <option value="8">Other (Custom Color)</option>
+            </select>
+
+            <br>
+            <br>
+            
+            <br>
+            <select onchange="updateClassPreview()" id="new-class-semester" class="category-dropdown">
+                <option value="0">External Credit</option>
+                <option value="1">Freshman Fall</option>
+                <option value="2">Freshman Spring</option>
+                <option value="3">Sophomore Fall</option>
+                <option value="4">Sophomore Spring</option>
+                <option value="5">Junior Fall</option>
+                <option value="6">Junior Spring</option>
+                <option value="7">Senior Fall</option>
+                <option value="8">Senior Spring</option>
+            </select>
+        </div>
 
         <div class="new-class-preview" id="new-class-preview" style="background-color: yellow;">
-            <input type="image" src="Tabulate-Icons/x-icon.png" class="class-box-delete"></input>
             <b class="class-box-text" id="class-preview-prefix-num">[PREFIX] [NUM]</b>
             <p class="class-box-text" id="class-preview-classname">[CLASSNAME]</p>
             <p class="class-box-text" id="class-preview-hours">[HOURS] hrs.</p>

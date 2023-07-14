@@ -1,18 +1,6 @@
 class Course {
     constructor(prefix, num, className, hrs, color, prereq, coreq, category){
-        this.prefix = prefix;
-        this.num = num;
-        this.className = className
-        this.hrs = hrs;
-        this.prereq = prereq;
-        this.coreq = coreq;
-        this.color = color;
-        this.semester = -1;
-        this.category = category;
-    }
-
-    updateCourseInfo(prefix, num, className, hrs, color, prereq, coreq, category) {
-        this.prefix = prefix;
+        this.prefix = prefix.toUpperCase();
         this.num = num;
         this.className = className
         this.hrs = hrs;
@@ -132,7 +120,7 @@ deleteAllCancel.addEventListener("click", e => {
 buildSchedule();
 
 function locateClass(className){
-    let prefix = className.split(" ")[0]
+    let prefix = className.split(" ")[0].toUpperCase()
     let num = className.split(" ")[1]
 
     for (let semester = 0; semester < courseData.length; semester++){
@@ -192,11 +180,34 @@ function editCourse() {
         coreqArray = []
     }
 
-    editingCourse.updateCourseInfo(in_prefix, in_num, in_name, parseInt(in_hours), classColors[parseInt(in_category)], prereqArray, coreqArray, in_category);
+    editingCourse = new Course(in_prefix, in_num, in_name, parseInt(in_hours), classColors[parseInt(in_category)], prereqArray, coreqArray, in_category);
     courseData[editSemester][editIndex] = editingCourse;
 
     buildSchedule();
     document.getElementById("edit-existing-class-dialogue").close()
+}
+
+function semesterIDtoString(id) {
+    switch(id){
+        case 0:
+            return "External Credit";
+        case 1:
+            return "Freshman Fall";
+        case 2:
+            return "Freshman Spring";
+        case 3:
+            return "Sophomore Fall";
+        case 4:
+            return "Sophomore Spring";
+        case 5:
+            return "Junior Fall";
+        case 6:
+            return "Junior Spring";
+        case 7:
+            return "Senior Fall";
+        case 8:
+            return "Senior Spring";
+    }
 }
 
 var editingCourse;
@@ -234,6 +245,7 @@ function buildSchedule() {
         }
 
         if (sem != 0){
+            semesterDivs[sem].innerHTML = '<p class="semester-title">' + semesterIDtoString(sem) + '</p>' + semesterDivs[sem].innerHTML
             semesterDivs[sem].innerHTML += '<p class="semester-hours">' + semesterHours.toString() + ' hrs.</p>'
         } 
         else {
@@ -364,6 +376,7 @@ document.getElementById("new-class-add").addEventListener("click", e => {
     let in_prerequisites = document.getElementById("new-class-prerequisites").value;
     let in_corequisites = document.getElementById("new-class-corequisites").value;
     let in_category = document.getElementById("new-class-category").value;
+    let in_semester = document.getElementById("new-class-semester").value;
 
     in_prerequisites = in_prerequisites.replaceAll(", ", ",");
     in_corequisites = in_corequisites.replaceAll(", ", ",");
@@ -379,7 +392,7 @@ document.getElementById("new-class-add").addEventListener("click", e => {
     }
 
     let addedCourse = new Course(in_prefix, in_num, in_name, parseInt(in_hours), classColors[parseInt(in_category)], prereqArray, coreqArray, in_category);
-    courseData[1].push(addedCourse)
+    courseData[parseInt(in_semester)].push(addedCourse);
     buildSchedule();
 
     document.getElementById("new-class-prefix").value = "";

@@ -22,10 +22,11 @@ body {
 .semester-container {
     background-color: #d9d9d9;
     width: 45%;
+    padding-top: 4vh;
     border: 0.25vw solid white;
     margin-left: 2.5%;
     margin-right: 2.5%;
-    height: 100%;
+    height: calc(100% - 4vh);
     position: relative;
     overflow-y: auto;
     overflow-x: hidden;
@@ -153,6 +154,19 @@ body {
     padding-top: 2.5vh;
     padding-bottom: 2vh;
     color: white;
+    font-family: sans-serif;
+    text-align: center;
+    opacity: 0.9;
+    z-index: 320;
+}
+
+.semester-title {
+    position: fixed;
+    top: 2vh;
+    width: 9.25%;
+    padding-top: 2.5vh;
+    padding-bottom: 2vh;
+    color: black;
     font-family: sans-serif;
     text-align: center;
     opacity: 0.9;
@@ -298,7 +312,6 @@ body {
 .new-class-preview {
     max-width: 10vw;
     left: 50%;
-    transform: translateX(-50%);
     bottom: 5vh;
     position: absolute;
     padding: 2%;
@@ -310,6 +323,16 @@ body {
     text-align: center;
     line-height: 2vh;
     font-size: 2vh;
+}
+
+.semester-label {
+    padding-left: 2.3vw;
+}
+
+.new-class-horizontal-box {
+    display: flex;
+    width: 100%;
+    margin-left: 0px;
 }
 
 .new-class-cancel {
