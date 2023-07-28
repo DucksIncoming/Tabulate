@@ -19,21 +19,6 @@ body {
     display: flex;
 }
 
-.semester-container {
-    background-color: #d9d9d9;
-    width: 45%;
-    padding-top: 7vh;
-    font-size: 2ch;
-    border: 0.25vw solid white;
-    margin-left: 2.5%;
-    margin-right: 2.5%;
-    height: calc(100% - 7vh);
-    position: relative;
-    overflow-y: auto;
-    overflow-x: hidden;
-    flex-wrap: nowrap;
-}
-
 .class-box {
     width: 8.75vw;
     min-width: 8.75vw;
@@ -147,11 +132,27 @@ body {
     margin: 0;
 }
 
+.semester-container {
+    background-color: #d9d9d9;
+    width: 45%;
+    padding-top: 7vh;
+    font-size: 2ch;
+    border: 0.25vw solid white;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    height: calc(100% - 14vh);
+    position: relative;
+    overflow-y: auto;
+    overflow-x: hidden;
+    flex-wrap: nowrap;
+}
+
 .semester-hours {
     background-color: #707070;
     position: fixed;
-    bottom: 23vh;
-    width: 9.25%;
+    top: 67vh;
+    margin-left: -0.25vw;
+    width: 9.75%;
     padding-top: 2.5vh;
     padding-bottom: 2vh;
     color: white;
@@ -491,6 +492,19 @@ body {
     cursor: pointer;
 }
 
+.export-data-button {
+    position: absolute;
+    bottom: 2vh;
+    right: 3vw;
+    width: 3vw;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.export-data-button:hover {
+    opacity: 1;
+}
+
 .save-data-button:hover {
     opacity: 1;
 }
@@ -508,6 +522,22 @@ body {
     animation-name: save-checkmark-fade;
     animation-iteration-count: 1;
     visibility: visible;
+}
+
+.degreeworks-utility-title {
+    color: white;
+    font-size:1.75vh;
+    text-align: center;
+    position: absolute;
+    bottom: 4.5vw;
+    right: 1vw;
+    font-family: sans-serif;
+    width: 8vw;
+    cursor: pointer;
+}
+
+.degreeworks-utility-title:hover {
+    text-decoration: underline;
 }
 
 @keyframes save-checkmark-fade {

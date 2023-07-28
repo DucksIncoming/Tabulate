@@ -442,3 +442,30 @@ function updateClassPreview(){
     document.getElementById("add-new-class-dialogue").appendChild(newClassPreview);
     newClassPreview.outerHTML = previewHtml;
 }
+
+document.getElementById("export-data-button").addEventListener("click", exportClasses)
+function exportClasses() {
+    let classStr = "";
+    for (let sem = 0; sem < courseData.length; sem++){
+        for (let cl = 0; cl < courseData[sem].length; cl++){
+            classStr += courseData[sem][cl].prefix + " " + courseData[sem][cl].num + "\n";
+        }
+    }
+
+    var file = new Blob([classStr], {type: "text/plain"});
+    if (window.navigator.msSaveOrOpenBlob) {
+        window.navigator.msSaveOrOpenBlob(file, "course-export");
+    }
+    else { // Others
+        var a = document.createElement("a"),
+                url = URL.createObjectURL(file);
+        a.href = url;
+        a.download = "course-export";
+        document.body.appendChild(a);
+        a.click();
+        setTimeout(function() {
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);  
+        }, 0); 
+    }
+}
