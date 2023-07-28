@@ -454,7 +454,7 @@ function exportClasses() {
 
     var file = new Blob([classStr], {type: "text/plain"});
     if (window.navigator.msSaveOrOpenBlob) {
-        window.navigator.msSaveOrOpenBlob(file, "course-export");
+        window.navigator.msSaveOrOpenBlob(file, "class-export");
     }
     else { // Others
         var a = document.createElement("a"),
